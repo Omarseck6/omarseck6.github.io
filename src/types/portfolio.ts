@@ -31,6 +31,7 @@ export type Project = {
   technologies: string[];
   accent: string;
   year: string;
+  image: string;
   liveUrl?: string;
   githubUrl?: string;
 };

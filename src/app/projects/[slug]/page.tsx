@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer/footer";
@@ -31,14 +32,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <Link href="/#projects" className="case-back"><ArrowLeft size={16} /> Back to selected work</Link>
           <div className="case-heading"><p>{project.category} · {project.year}</p><h1>{project.name}</h1><span>{project.description}</span></div>
           <div className="case-art" style={{ background: `radial-gradient(circle at 35% 35%, ${project.accent}, #090909 65%)` }}>
-            <div className="case-window"><p>{project.category}</p><strong>{project.name}</strong><span>{project.technologies.join(" · ")}</span></div>
+            <div className="case-image">
+              <Image
+                src={project.image}
+                alt={`${project.name} – aperçu du projet`}
+                fill
+                sizes="(max-width: 768px) 100vw, 80vw"
+                priority
+                className="case-image-img"
+              />
+              <div className="case-image-overlay" />
+            </div>
           </div>
         </div>
       </section>
       <section className="case-body section-light">
         <div className="container-shell case-body-grid">
           <div><p className="eyebrow">The challenge</p><h2>Making complexity feel intentional.</h2></div>
-          <div><p>{project.longDescription}</p><div className="case-tech">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div><Link href="/#contact" className="button button-dark">Start a project <ArrowUpRight size={17} /></Link></div>
+          <div><p>{project.longDescription}</p><div className="case-tech">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div><div className="case-links">{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="button button-dark">Visit live site <ArrowUpRight size={17} /></a>}<Link href="/#contact" className="button button-outline">Start a project <ArrowUpRight size={17} /></Link></div></div>
         </div>
       </section>
       <Footer />

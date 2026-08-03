@@ -18,7 +18,7 @@ export const portfolio = {
   phone: "+221 76 814 80 84",
   cv: "/omar-seck-cv.pdf",
   yearsExperience: 4,
-  projectsCompleted: 6,
+  projectsCompleted: 4,
   socials: [
     { label: "GitHub", href: "https://github.com/Omarseck6" },
     { label: "LinkedIn", href: "https://linkedin.com/in/omarseck" },
@@ -38,7 +38,15 @@ export const navigation = [
 export const skillGroups: SkillGroup[] = [
   {
     title: "Frontend",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Angular"],
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Angular",
+    ],
   },
   {
     title: "Backend",
@@ -46,7 +54,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Database",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Prisma", "Supabase", "Firebase"],
+    skills: [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Prisma",
+      "Supabase",
+      "Firebase",
+    ],
   },
   {
     title: "Cloud & DevOps",
@@ -59,17 +74,20 @@ export const services: Service[] = [
   {
     index: "01",
     title: "Software Development",
-    description: "Robust software systems engineered around real business constraints, clean architecture and durable code.",
+    description:
+      "Robust software systems engineered around real business constraints, clean architecture and durable code.",
   },
   {
     index: "02",
     title: "Modern Web Applications",
-    description: "Fast, accessible web experiences with a distinct visual language and obsessive attention to interaction.",
+    description:
+      "Fast, accessible web experiences with a distinct visual language and obsessive attention to interaction.",
   },
   {
     index: "03",
     title: "API Development",
-    description: "Secure, observable APIs and integrations designed to scale without making the product harder to evolve.",
+    description:
+      "Secure, observable APIs and integrations designed to scale without making the product harder to evolve.",
   },
 ];
 
@@ -78,83 +96,138 @@ export const experiences: Experience[] = [
     company: "Nexa Digital Studio",
     role: "Lead Full-Stack Engineer",
     period: "2023 — Present",
-    description: "Leading product engineering across design systems, critical web platforms and distributed services while mentoring a multidisciplinary team.",
+    description:
+      "Leading product engineering across design systems, critical web platforms and distributed services while mentoring a multidisciplinary team.",
     technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "AWS"],
   },
   {
     company: "Atlas Product Lab",
     role: "Senior Software Engineer",
     period: "2020 — 2023",
-    description: "Shipped high-traffic B2B products, introduced frontend performance budgets and rebuilt the shared application platform.",
+    description:
+      "Shipped high-traffic B2B products, introduced frontend performance budgets and rebuilt the shared application platform.",
     technologies: ["React", "Node.js", "GraphQL", "Docker", "Figma"],
   },
   {
     company: "Kër Technologies",
     role: "Full-Stack Developer",
     period: "2018 — 2020",
-    description: "Built customer-facing platforms and internal operations tools for fast-growing teams across West Africa.",
+    description:
+      "Built customer-facing platforms and internal operations tools for fast-growing teams across West Africa.",
     technologies: ["Angular", "Laravel", "MySQL", "Firebase"],
   },
 ];
 
 export const projects: Project[] = [
   {
-    slug: "orbis-finance",
-    name: "Orbis Finance",
-    category: "Fintech platform",
-    description: "A real-time financial command center turning complex portfolios into clear, actionable signals.",
-    longDescription: "Orbis unifies performance, risk and reporting inside a focused workspace. The experience was designed from the information architecture upward to keep sophisticated workflows calm, fast and legible.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "D3.js"],
+    slug: "elite-dental",
+    name: "Elite Dental",
+    category: "Custom WordPress Website",
+    description:
+      "Professional website developed for a dental laboratory specialized in selling dental products and equipment.",
+    longDescription:
+      "Fully customized WordPress theme with structured product catalog implementation. The project includes UX/UI optimization with responsive design, SEO, security and performance plugin integration, and Core Web Vitals optimization to strengthen the company's digital presence and provide a professional platform for showcasing dental products.",
+    technologies: ["WordPress", "PHP", "MySQL", "Figma"],
     accent: "#B11226",
-    year: "2026",
+    year: "2023",
+    image: "/images/elite-dental.png",
+    liveUrl: "https://elitedental.fr/",
   },
   {
-    slug: "naya-commerce",
-    name: "Naya Commerce",
-    category: "Commerce ecosystem",
-    description: "A modular storefront and operations suite for an ambitious contemporary lifestyle brand.",
-    longDescription: "Naya combines editorial commerce, localized checkout and a composable operations layer. A reusable design system keeps every touchpoint consistent without flattening the brand.",
-    technologies: ["React", "NestJS", "Supabase", "Stripe"],
-    accent: "#7A1B25",
-    year: "2025",
-  },
-  {
-    slug: "pulse-health",
-    name: "Pulse Health",
-    category: "Digital health",
-    description: "An accessible care coordination product made for clarity in high-pressure clinical moments.",
-    longDescription: "Pulse gives clinical teams a precise view of patient journeys, communication and follow-ups. Accessibility, resilience and understandable states guided every interaction.",
-    technologies: ["Next.js", "C#", ".NET", "Azure"],
-    accent: "#4A1218",
-    year: "2025",
-  },
-  {
-    slug: "vertex-cloud",
-    name: "Vertex Cloud",
-    category: "Developer tooling",
-    description: "A deployment experience that makes infrastructure status feel immediate and understandable.",
-    longDescription: "Vertex surfaces releases, environments and incidents in one real-time interface. Motion and hierarchy make complex system states readable without adding visual noise.",
-    technologies: ["TypeScript", "Node.js", "Docker", "AWS"],
-    accent: "#97182A",
+    slug: "baatukaay",
+    name: "Baatukaay",
+    category: "Multilingual Online Dictionary",
+    description:
+      "Full-stack web and mobile dictionary application designed to promote and digitize African languages.",
+    longDescription:
+      "Baatukaay is a complete FR–EN–Wolof dictionary platform with instant word search and dynamic results. The project features a RESTful API for translations, a scalable backend architecture, a cross-platform mobile application and a responsive web interface — built to create a scalable and accessible digital dictionary platform for language preservation.",
+    technologies: [
+      "React.js",
+      "Next.js",
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "TypeScript",
+      "MySQL",
+      "Git",
+      "Vercel",
+    ],
+    accent: "#0D5C46",
     year: "2024",
+    image: "/images/baatukaay.png",
+    liveUrl: "https://www.baatukaay.com/",
+  },
+  {
+    slug: "yobbal",
+    name: "Yobbal",
+    category: "Parcel Delivery & Tracking Platform",
+    description:
+      "Full-stack logistics platform enabling users to send, receive and track parcels efficiently.",
+    longDescription:
+      "Yobbal is a modern digital logistics solution for local delivery operations. The platform handles parcel creation and shipment management, real-time tracking, a customer interface with admin dashboard, and complete order status management (Pending, In Transit, Delivered) powered by a RESTful API integration.",
+    technologies: [
+      "React.js",
+      "Next.js",
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "JavaScript",
+      "MySQL",
+      "Git",
+      "Vercel",
+    ],
+    accent: "#B8791B",
+    year: "2025",
+    image: "/images/yobbal-1.png",
+    liveUrl: "https://www.yobbal.sn/",
+  },
+  {
+    slug: "exijob",
+    name: "ExiJob",
+    category: "Job Board Platform",
+    description:
+      "An online recruitment platform (job board) that connects job seekers with recruiters.",
+    longDescription:
+      "ExiJob is a web-based recruitment platform developed using Angular 21 with TypeScript, Tailwind CSS 4, and Angular Material. Structured as a frontend monorepo with a small integrated Express backend for file uploads, it enables job postings, applications, messaging, coaching, testing, and payroll management. Goal: to efficiently connect candidates and recruiters.",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "Tailwind",
+      "Angular Material",
+      "RxJS",
+      "Express",
+      "Multer",
+      "Vitest",
+      "Docker",
+      "Figma",
+    ],
+    accent: "#2D4AC9",
+    year: "2026",
+    image: "/images/exijob.png",
+    liveUrl: "http://15.188.50.138/",
   },
 ];
 
 export const testimonials: Testimonial[] = [
   {
-    quote: "Omar has the rare ability to simplify a complex product without simplifying the ambition behind it.",
+    quote:
+      "Omar has the rare ability to simplify a complex product without simplifying the ambition behind it.",
     name: "Aïssatou Ndiaye",
     role: "Product Director · Naya",
     initials: "AN",
   },
   {
-    quote: "Every decision had intent — architecture, interaction and performance all moved in the same direction.",
+    quote:
+      "Every decision had intent — architecture, interaction and performance all moved in the same direction.",
     name: "Marc Dubois",
     role: "Founder · Orbis",
     initials: "MD",
   },
   {
-    quote: "He elevated both the product and the team. The resulting system is faster, clearer and genuinely built to last.",
+    quote:
+      "He elevated both the product and the team. The resulting system is faster, clearer and genuinely built to last.",
     name: "Fatou Ba",
     role: "VP Engineering · Atlas",
     initials: "FB",

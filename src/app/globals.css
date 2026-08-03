@@ -162,6 +162,25 @@ a {
   background: var(--ink);
   color: white;
 }
+.button-outline {
+  border-color: var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+.button-outline:hover {
+  border-color: var(--ink);
+}
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.project-actions a {
+  display: inline-flex;
+}
+.project-actions a:first-child span {
+  color: white;
+}
 
 /* Navigation */
 .nav-shell {
@@ -862,82 +881,36 @@ a {
 .project-visual {
   position: relative;
   display: block;
-  height: clamp(380px, 48vw, 650px);
+  height: clamp(300px, 32vw, 460px);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #100b0c;
 }
-.project-orb {
+.project-visual-link {
   position: absolute;
-  width: 76%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  top: 7%;
+  inset: 0;
+  display: block;
+}
+.project-image {
+  position: absolute;
+  top: 12%;
   left: 12%;
-  display: grid;
-  place-items: center;
-  filter: saturate(0.8);
-  box-shadow:
-    inset 0 0 70px rgba(255, 255, 255, 0.04),
-    0 0 80px rgba(177, 18, 38, 0.12);
-}
-.project-orb span {
-  color: rgba(255, 255, 255, 0.06);
-  font-size: 24vw;
-  line-height: 1;
-  font-weight: 800;
-}
-.project-browser {
-  position: absolute;
-  top: 20%;
-  left: 17%;
-  width: 66%;
-  height: 57%;
-  padding: 16px;
-  transform: perspective(900px) rotateX(4deg) rotateY(-8deg) rotateZ(2deg);
+  width: 80%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
   border-radius: 10px;
-  background: rgba(242, 239, 233, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45);
-  color: var(--ink);
+  transform: perspective(900px) rotateX(4deg) rotateY(-8deg) rotateZ(2deg);
 }
-.project-browser > div:first-child {
-  display: flex;
-  gap: 5px;
+.project-image-img {
+  object-fit: cover;
+  object-position: center top;
 }
-.project-browser i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #bdb8b0;
-}
-.project-browser p {
-  margin: 20% 0 7px;
-  color: #777;
-  font: 500 8px/1 var(--font-inter);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-.project-browser strong {
-  font-size: clamp(28px, 4vw, 54px);
-  line-height: 0.9;
-  letter-spacing: -0.07em;
-}
-.browser-lines {
-  display: grid !important;
-  gap: 8px !important;
-  margin-top: 10%;
-}
-.browser-lines span {
-  height: 5px;
-  background: #d7d3cd;
-  border-radius: 4px;
-}
-.browser-lines span:nth-child(2) {
-  width: 74%;
-}
-.browser-lines span:nth-child(3) {
-  width: 46%;
-  background: var(--wine);
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 .project-actions {
   position: absolute;
@@ -1405,33 +1378,25 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
-.case-window {
-  width: 67%;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 8%;
-  background: rgba(244, 242, 238, 0.93);
-  color: var(--ink);
-  transform: perspective(900px) rotateY(-7deg) rotateX(3deg);
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.38);
+.case-image {
+  position: relative;
+  width: 82%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.45);
+  transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
 }
-.case-window p {
-  color: var(--wine);
-  font: 600 10px/1 var(--font-inter);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+.case-image-img {
+  object-fit: cover;
+  object-position: center top;
 }
-.case-window strong {
-  font-size: clamp(60px, 9vw, 130px);
-  line-height: 0.82;
-  letter-spacing: -0.085em;
-}
-.case-window span {
-  margin-top: 38px;
-  color: #777;
-  font: 500 10px/1 var(--font-inter);
+.case-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(9, 9, 9, 0.55), transparent 45%);
+  pointer-events: none;
 }
 .case-body {
   padding: 145px 0;
@@ -1639,7 +1604,7 @@ a {
     margin-top: 0;
   }
   .project-visual {
-    height: 520px;
+    height: 360px;
   }
   .project-info {
     grid-template-columns: 1fr;
@@ -1711,9 +1676,8 @@ a {
   .case-art {
     min-height: 480px;
   }
-  .case-window {
-    width: 82%;
-    min-height: 300px;
+  .case-image {
+    width: 92%;
   }
 }
 
