@@ -686,6 +686,11 @@ a {
   background: var(--ink);
   font-size: 8px;
 }
+.skill-chip span svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
 
 /* Services */
 .services {

@@ -1,4 +1,5 @@
-import { ArrowDownToLine, ArrowUpRight, Code2, Network, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowDownToLine, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { portfolio } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/reveal";
 import { ContactForm } from "./contact-form";
@@ -20,8 +21,8 @@ export function Contact() {
               <p><MapPin /> <span><small>Based in</small>{portfolio.location}</span></p>
             </div>
             <div className="contact-socials">
-              <a href={portfolio.socials[0].href} aria-label="GitHub" target="_blank" rel="noreferrer"><Code2 /></a>
-              <a href={portfolio.socials[1].href} aria-label="LinkedIn" target="_blank" rel="noreferrer"><Network /></a>
+              <a href={portfolio.socials[0].href} aria-label="GitHub" target="_blank" rel="noreferrer"><FaGithub /></a>
+              <a href={portfolio.socials[1].href} aria-label="LinkedIn" target="_blank" rel="noreferrer"><FaLinkedin /></a>
               <a href={portfolio.cv} aria-label="Download CV" download><ArrowDownToLine /></a>
             </div>
           </Reveal>

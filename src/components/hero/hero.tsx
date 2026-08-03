@@ -6,13 +6,8 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Download,
-  Code2,
-  Network,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { useRef } from "react";
 import { portfolio } from "@/data/portfolio";
@@ -100,7 +95,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              <Code2 size={19} />
+              <FaGithub size={19} />
             </a>
             <a
               href={portfolio.socials[1].href}
@@ -109,7 +104,7 @@ export function Hero() {
               target="_blank"
               rel="noreferrer"
             >
-              <Network size={19} />
+              <FaLinkedin size={19} />
             </a>
           </div>
         </motion.div>

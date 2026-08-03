@@ -14,14 +14,14 @@ export const portfolio = {
   eyebrow: "Available for select projects · 2026",
   bio: "I design and engineer digital products where rigorous systems meet refined interfaces — from first idea to production.",
   location: "Dakar, Senegal",
-  email: "hello@omarseck.dev",
-  phone: "+221 77 000 00 00",
+  email: "omarseck.dev@gmail.com",
+  phone: "+221 76 814 80 84",
   cv: "/omar-seck-cv.pdf",
-  yearsExperience: 8,
-  projectsCompleted: 32,
+  yearsExperience: 4,
+  projectsCompleted: 6,
   socials: [
-    { label: "GitHub", href: "https://github.com/" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/" },
+    { label: "GitHub", href: "https://github.com/Omarseck6" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/omarseck" },
   ] satisfies SocialLink[],
 };
 
