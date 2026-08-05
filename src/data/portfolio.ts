@@ -93,28 +93,28 @@ export const services: Service[] = [
 
 export const experiences: Experience[] = [
   {
-    company: "Nexa Digital Studio",
-    role: "Lead Full-Stack Engineer",
-    period: "2023 — Present",
+    company: "Bokk Dem SARL",
+    role: "Mobile & Backend Developer",
+    period: "Nov 2025 — Mar 2026",
     description:
-      "Leading product engineering across design systems, critical web platforms and distributed services while mentoring a multidisciplinary team.",
-    technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "AWS"],
+      "Designed and developed a complete platform (client/driver mobile apps + backend) with a microservices-inspired architecture, focusing on scalability, performance and high availability.",
+    technologies: ["NestJS", "TypeScript", "React Native", "CI/CD"],
   },
   {
-    company: "Atlas Product Lab",
-    role: "Senior Software Engineer",
-    period: "2020 — 2023",
-    description:
-      "Shipped high-traffic B2B products, introduced frontend performance budgets and rebuilt the shared application platform.",
-    technologies: ["React", "Node.js", "GraphQL", "Docker", "Figma"],
-  },
-  {
-    company: "Kër Technologies",
+    company: "Fathala-IT",
     role: "Full-Stack Developer",
-    period: "2018 — 2020",
+    period: "Jan 2025 — Sep 2025",
     description:
-      "Built customer-facing platforms and internal operations tools for fast-growing teams across West Africa.",
-    technologies: ["Angular", "Laravel", "MySQL", "Firebase"],
+      "Built and maintained robust web applications with JavaScript, React and Node.js — boosting user engagement by 25%, and cut server response time by 40% through secure, well-designed REST APIs.",
+    technologies: ["Next.js", "TypeScript", "React Native", "MySQL", "Node.js", "Express", "Vercel"],
+  },
+  {
+    company: "Freelance",
+    role: "Full-Stack Developer",
+    period: "May 2022 — Jan 2025",
+    description:
+      "Delivered web and mobile projects (showcase sites, e-commerce, APIs) for various clients — from backend feature integration to CSS/Bootstrap refactoring and code optimization (-28% lines of code).",
+    technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP", "Figma", "Hostinger"],
   },
 ];
 
