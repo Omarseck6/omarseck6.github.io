@@ -1,6 +1,7 @@
 import { ArrowDownToLine, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { portfolio } from "@/data/portfolio";
+import { CvButton } from "@/components/cv/cv-button";
 import { Reveal } from "@/components/ui/reveal";
 import { ContactForm } from "./contact-form";
 
@@ -23,7 +24,7 @@ export function Contact() {
             <div className="contact-socials">
               <a href={portfolio.socials[0].href} aria-label="GitHub" target="_blank" rel="noreferrer"><FaGithub /></a>
               <a href={portfolio.socials[1].href} aria-label="LinkedIn" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-              <a href={portfolio.cv} aria-label="Download CV" download><ArrowDownToLine /></a>
+              <CvButton label="Download CV"><ArrowDownToLine /></CvButton>
             </div>
           </Reveal>
         </div>

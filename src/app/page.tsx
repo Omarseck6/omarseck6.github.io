@@ -8,15 +8,19 @@ import { Services } from "@/components/services/services";
 import { Skills } from "@/components/skills/skills";
 import { Testimonials } from "@/components/testimonials/testimonials";
 import { portfolio } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: portfolio.name,
+    url: `${siteUrl}/`,
     jobTitle: portfolio.role,
     email: portfolio.email,
     address: { "@type": "PostalAddress", addressLocality: "Dakar", addressCountry: "SN" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: portfolio.education.school },
+    knowsLanguage: portfolio.languages.map((language) => language.name),
     sameAs: portfolio.socials.map((social) => social.href),
   };
 

@@ -5,6 +5,7 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/types/portfolio";
+import { ProjectPlaceholder } from "./project-placeholder";
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
@@ -20,13 +21,17 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             variants={{ initial: { scale: 1 }, hover: { scale: 1.06 } }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Image
-              src={project.image}
-              alt={`${project.name} – aperçu du projet`}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="project-image-img"
-            />
+            {project.image ? (
+              <Image
+                src={project.image}
+                alt={`${project.name} – project preview`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="project-image-img"
+              />
+            ) : (
+              <ProjectPlaceholder project={project} />
+            )}
             <div className="project-image-overlay" style={{ background: `linear-gradient(to top, ${project.accent}33, transparent 60%)` }} />
           </motion.div>
         </Link>
@@ -38,7 +43,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             <span>View case study <ArrowUpRight size={16} /></span>
           </Link>
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={project.liveLabel ?? `Visit ${project.name} website`}>
               <span><ExternalLink size={16} /></span>
             </a>
           )}

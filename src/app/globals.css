@@ -646,13 +646,13 @@ a {
   grid-column: span 6;
 }
 .skill-group-3 {
-  grid-column: span 5;
+  grid-column: span 3;
 }
 .skill-group-4 {
   grid-column: span 5;
 }
 .skill-group-5 {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 .skill-group-head {
   display: flex;
@@ -1256,20 +1256,198 @@ a {
   display: flex;
   gap: 9px;
 }
-.contact-socials a {
+.contact-socials a,
+.contact-socials button {
   display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
   transition: background 0.25s ease;
 }
-.contact-socials a:hover {
+.contact-socials a:hover,
+.contact-socials button:hover {
   background: var(--wine);
 }
 .contact-socials svg {
   width: 17px;
+}
+
+/* CV dialog */
+.cv-dialog {
+  width: min(92vw, 480px);
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  /* Tailwind's preflight zeroes margins, which would undo the native centering of modal dialogs. */
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  color: white;
+  background: radial-gradient(circle at 85% 0%, rgba(177, 18, 38, 0.32), transparent 55%), #0f0b0c;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+}
+.cv-dialog[open] {
+  animation: cv-dialog-in 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cv-dialog::backdrop {
+  background: rgba(9, 9, 9, 0.72);
+  backdrop-filter: blur(6px);
+}
+@keyframes cv-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+.cv-dialog-panel {
+  padding: 26px;
+}
+.cv-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cv-dialog-head p {
+  margin: 0;
+  color: var(--wine);
+  font: 600 10px/1 var(--font-inter);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.cv-dialog-close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.cv-dialog-close:hover {
+  border-color: white;
+  color: white;
+}
+.cv-dialog h2 {
+  margin: 18px 0 8px;
+  font-size: 30px;
+  letter-spacing: -0.05em;
+}
+.cv-dialog-copy {
+  display: block;
+  color: rgba(255, 255, 255, 0.55);
+  font: 400 13px/1.6 var(--font-inter);
+}
+.cv-options {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-options li {
+  display: flex;
+  gap: 8px;
+}
+.cv-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.cv-option:hover {
+  border-color: var(--wine);
+  background: rgba(177, 18, 38, 0.14);
+  transform: translateY(-2px);
+}
+.cv-option-code {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  background: var(--wine);
+  font: 700 12px/1 var(--font-inter);
+  letter-spacing: 0.06em;
+}
+.cv-option-label {
+  flex: 1;
+  display: grid;
+  gap: 4px;
+}
+.cv-option-label strong {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+.cv-option-label small {
+  color: rgba(255, 255, 255, 0.5);
+  font: 500 11px/1 var(--font-inter);
+}
+.cv-option-download {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.cv-option-download:hover {
+  border-color: var(--wine);
+  background: var(--wine);
+  color: white;
+}
+
+/* Project placeholder (projects without a screenshot) */
+.project-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 7%;
+  overflow: hidden;
+  color: white;
+}
+.project-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to top, black, transparent 85%);
+}
+.project-placeholder strong {
+  position: relative;
+  font-size: clamp(30px, 4.4vw, 72px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.project-placeholder small {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  font: 500 clamp(9px, 0.8vw, 12px) / 1.4 var(--font-inter);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 /* Footer */

@@ -31,9 +31,19 @@ export type Project = {
   technologies: string[];
   accent: string;
   year: string;
-  image: string;
+  /** Screenshot in `public/`; projects without one get a branded placeholder visual. */
+  image?: string;
   liveUrl?: string;
+  /** Label of the live link, e.g. for an app store page instead of a website. */
+  liveLabel?: string;
   githubUrl?: string;
+};
+
+export type CvVersion = {
+  code: string;
+  label: string;
+  language: string;
+  href: string;
 };
 
 export type Testimonial = {

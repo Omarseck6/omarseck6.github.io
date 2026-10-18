@@ -10,7 +10,11 @@ import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { useRef } from "react";
-import { portfolio } from "@/data/portfolio";
+import { CvButton } from "@/components/cv/cv-button";
+import { portfolio, skillGroups } from "@/data/portfolio";
+
+// Rounded down to a multiple of 5 for the "N+" metric.
+const technologyCount = Math.floor(skillGroups.flatMap((group) => group.skills).length / 5) * 5;
 
 const title = "FULL-STACK ENGINEER";
 const titleWords = title.split(" ");
@@ -85,9 +89,9 @@ export function Hero() {
           </h1>
           <p className="hero-description">{portfolio.bio}</p>
           <div className="hero-actions">
-            <a href={portfolio.cv} className="button button-primary" download>
+            <CvButton className="button button-primary">
               <Download size={17} /> Download CV
-            </a>
+            </CvButton>
             <a
               href={portfolio.socials[0].href}
               className="icon-button"
@@ -117,8 +121,8 @@ export function Hero() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src="/images/osss.png"
-            alt="Portrait éditorial d'Omar Seck"
+            src="/images/osss.webp"
+            alt="Editorial portrait of Omar Seck"
             fill
             priority
             sizes="(max-width: 768px) 90vw, 48vw"
@@ -153,7 +157,7 @@ export function Hero() {
             </div>
             <div className="metric-card">
               <strong>
-                15<sup>+</sup>
+                {technologyCount}<sup>+</sup>
               </strong>
               <span>Core technologies</span>
             </div>

@@ -14,8 +14,8 @@ export function About() {
             <h2 className="about-title">The crafted mind that builds <span>the future of modern technology.</span></h2>
           </Reveal>
           <Reveal delay={0.1} className="about-copy">
-            <p>I work at the intersection of engineering, product strategy and visual design. The goal is never to add more — it is to make the right things feel inevitable.</p>
-            <p>From architecture to the final micro-interaction, I build coherent systems that teams can maintain and people enjoy using.</p>
+            <p>I&apos;m a full-stack engineer with a {portfolio.education.degree} from {portfolio.education.school}, focused on product and software quality. I connect TypeScript interfaces, business APIs, service integrations and production delivery.</p>
+            <p>My approach: turn business needs into reliable, consistent and scalable digital solutions — balancing functional requirements, technical quality and ease of use. I work in {portfolio.languages.map((language) => `${language.name} (${language.level})`).join(" and ")}.</p>
           </Reveal>
         </div>
 
@@ -26,7 +26,7 @@ export function About() {
           </Reveal>
           <Reveal delay={0.12} className="about-image-wrap">
             <div className="about-image-card">
-              <Image src="/images/os.png" alt="Omar Seck dans son environnement de création" fill sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src="/images/os.webp" alt="Omar Seck in his workspace" fill sizes="(max-width: 768px) 100vw, 50vw" />
               <div className="about-image-overlay" />
               <p>Ideas become products<br />through disciplined craft.</p>
             </div>

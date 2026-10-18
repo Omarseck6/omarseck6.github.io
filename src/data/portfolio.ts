@@ -1,4 +1,5 @@
 import type {
+  CvVersion,
   Experience,
   Project,
   Service,
@@ -10,15 +11,26 @@ import type {
 export const portfolio = {
   name: "Omar Seck",
   shortName: "OS",
-  role: "Full-Stack Engineer",
+  role: "Full-Stack Software Engineer",
   eyebrow: "Available for select projects · 2026",
-  bio: "I design and engineer digital products where rigorous systems meet refined interfaces — from first idea to production.",
+  bio: "I build web & mobile platforms, APIs and application architecture — turning business needs into reliable, scalable products, from first idea to production.",
   location: "Dakar, Senegal",
   email: "omarseck.dev@gmail.com",
   phone: "+221 76 814 80 84",
-  cv: "/omar-seck-cv.pdf",
+  cv: [
+    { code: "FR", label: "Français", language: "fr", href: "/cv/omar-seck-cv-fr.pdf" },
+    { code: "EN", label: "English", language: "en", href: "/cv/omar-seck-cv-en.pdf" },
+  ] satisfies CvVersion[],
   yearsExperience: 4,
   projectsCompleted: 4,
+  education: {
+    degree: "professional Bachelor's degree in Software Engineering",
+    school: "Institut Supérieur d'Informatique (ISI), Dakar",
+  },
+  languages: [
+    { name: "French", level: "C1" },
+    { name: "English", level: "B2" },
+  ],
   socials: [
     { label: "GitHub", href: "https://github.com/Omarseck6" },
     { label: "LinkedIn", href: "https://linkedin.com/in/omarseck" },
@@ -37,176 +49,165 @@ export const navigation = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Frontend",
+    title: "Frontend & Mobile",
     skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
       "TypeScript",
+      "JavaScript",
       "React",
       "Next.js",
       "Angular",
+      "Vue.js",
+      "React Native",
+      "Expo",
+      "Flutter",
+      "HTML",
+      "CSS",
     ],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "NestJS", "Laravel", "PHP", ".NET", "C#"],
+    title: "Backend & API",
+    skills: ["Node.js", "NestJS", "Express", "Java", "Spring Boot", "Quarkus", "Python", "PHP", "REST APIs"],
   },
   {
-    title: "Database",
+    title: "Data",
+    skills: ["PostgreSQL", "Supabase", "MySQL", "MongoDB", "Firebase"],
+  },
+  {
+    title: "DevOps & Cloud",
     skills: [
-      "PostgreSQL",
-      "MySQL",
-      "MongoDB",
-      "Prisma",
-      "Supabase",
-      "Firebase",
+      "Linux",
+      "Nginx",
+      "PM2",
+      "Docker",
+      "Kubernetes",
+      "OpenShift",
+      "Ansible",
+      "Jenkins",
+      "GitLab CI",
+      "GitHub Actions",
+      "EAS",
+      "AWS",
+      "Git",
     ],
   },
   {
-    title: "Cloud & DevOps",
-    skills: ["Docker", "Git", "GitHub", "AWS", "Vercel"],
+    title: "Testing & Observability",
+    skills: ["JUnit", "Jest", "Vitest", "Cypress", "Selenium", "Prometheus", "Grafana", "Sentry"],
   },
-  { title: "Design", skills: ["Figma"] },
 ];
 
 export const services: Service[] = [
   {
     index: "01",
-    title: "Software Development",
+    title: "Web & Mobile Platforms",
     description:
-      "Robust software systems engineered around real business constraints, clean architecture and durable code.",
+      "Responsive web apps and React Native mobile apps built on reusable components, consistent UI and user journeys designed with accessibility in mind.",
   },
   {
     index: "02",
-    title: "Modern Web Applications",
+    title: "APIs & Application Architecture",
     description:
-      "Fast, accessible web experiences with a distinct visual language and obsessive attention to interaction.",
+      "End-to-end features, REST APIs and a clean mobile/backend separation — with Node.js, NestJS or Spring Boot, solid data models and third-party integrations.",
   },
   {
     index: "03",
-    title: "API Development",
+    title: "Delivery & Operations",
     description:
-      "Secure, observable APIs and integrations designed to scale without making the product harder to evolve.",
+      "CI/CD pipelines, Linux/VPS deployments and observability with Prometheus, Grafana and Sentry — so products ship reliably and recover fast.",
   },
 ];
 
 export const experiences: Experience[] = [
   {
+    company: "Exigences Groupe",
+    role: "Software & AI Engineer",
+    period: "Jun 2026 — Oct 2026",
+    description:
+      "Designed and built ExiJob, a pan-African recruitment platform, from requirements analysis to production. Delivered the full-stack features, APIs and business logic behind candidates, recruiters, job offers and hiring workflows, integrated generative-AI / LLM features, and set up an observability stack (Prometheus, Grafana, ELK, Sentry) with SLO alerting that cut mean time to recovery from ~3.5 hours to under 25 minutes.",
+    technologies: ["Angular", "TypeScript", "Python", "PostgreSQL", "OpenAI", "AWS", "Prometheus", "Grafana", "Sentry"],
+  },
+  {
     company: "Bokk Dem SARL",
-    role: "Mobile & Backend Developer",
+    role: "Lead Mobile & Backend Developer",
     period: "Nov 2025 — Mar 2026",
     description:
-      "Designed and developed a complete platform (client/driver mobile apps + backend) with a microservices-inspired architecture, focusing on scalability, performance and high availability.",
-    technologies: ["NestJS", "TypeScript", "React Native", "CI/CD"],
+      "Designed, built and shipped a mobility & delivery platform — Customer app, Driver app and backend API. React Native / Expo apps and NestJS services on PostgreSQL / Supabase with real-time data, Google Maps geolocation, FCM notifications, SMS OTP and payment integration; API deployed on a Linux VPS (Nginx, PM2) with GitHub Actions and EAS release pipelines.",
+    technologies: ["React Native", "Expo", "NestJS", "PostgreSQL", "Supabase", "Firebase", "GitHub Actions", "EAS"],
   },
   {
     company: "Fathala-IT",
-    role: "Full-Stack Developer",
+    role: "Software Engineer",
     period: "Jan 2025 — Sep 2025",
     description:
-      "Built and maintained robust web applications with JavaScript, React and Node.js — boosting user engagement by 25%, and cut server response time by 40% through secure, well-designed REST APIs.",
-    technologies: ["Next.js", "TypeScript", "React Native", "MySQL", "Node.js", "Express", "Vercel"],
+      "Built full-stack features for a B2B SaaS product with React, Vue.js, Java, Node.js and PostgreSQL, shipping 8 major features in the first month. Introduced sprint-health indicators and retrospective actions that improved on-time delivery by 30%, and optimized front/back data flows and service responsiveness.",
+    technologies: ["React", "Vue.js", "Java", "Node.js", "PostgreSQL", "Scrum"],
   },
   {
-    company: "Freelance",
+    company: "Elite Dental Laboratory",
     role: "Full-Stack Developer",
     period: "May 2022 — Jan 2025",
     description:
-      "Delivered web and mobile projects (showcase sites, e-commerce, APIs) for various clients — from backend feature integration to CSS/Bootstrap refactoring and code optimization (-28% lines of code).",
-    technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP", "Figma", "Hostinger"],
+      "Designed, built and maintained websites, logistics and e-commerce platforms, services and APIs tailored to client needs. Customized backend features alongside designers and front-end developers, handled performance optimization and production troubleshooting, and trained clients and team members on the company's platforms.",
+    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "REST APIs"],
   },
 ];
 
 export const projects: Project[] = [
   {
-    slug: "elite-dental",
-    name: "Elite Dental",
-    category: "Custom WordPress Website",
+    slug: "bokk-dem",
+    name: "Bokk Dem",
+    category: "Mobility & Delivery Platform",
     description:
-      "Professional website developed for a dental laboratory specialized in selling dental products and equipment.",
+      "MVP bringing together a Customer app, a Driver app and a backend API for urban mobility and deliveries.",
     longDescription:
-      "Fully customized WordPress theme with structured product catalog implementation. The project includes UX/UI optimization with responsive design, SEO, security and performance plugin integration, and Core Web Vitals optimization to strengthen the company's digital presence and provide a professional platform for showcasing dental products.",
-    technologies: ["WordPress", "PHP", "MySQL", "Figma"],
-    accent: "#B11226",
-    year: "2023",
-    image: "/images/elite-dental.png",
-    liveUrl: "https://elitedental.fr/",
-  },
-  {
-    slug: "baatukaay",
-    name: "Baatukaay",
-    category: "Multilingual Online Dictionary",
-    description:
-      "Full-stack web and mobile dictionary application designed to promote and digitize African languages.",
-    longDescription:
-      "Baatukaay is a complete FR–EN–Wolof dictionary platform with instant word search and dynamic results. The project features a RESTful API for translations, a scalable backend architecture, a cross-platform mobile application and a responsive web interface — built to create a scalable and accessible digital dictionary platform for language preservation.",
-    technologies: [
-      "React.js",
-      "Next.js",
-      "React Native",
-      "Node.js",
-      "Express.js",
-      "PHP",
-      "TypeScript",
-      "MySQL",
-      "Git",
-      "Vercel",
-    ],
-    accent: "#0D5C46",
-    year: "2024",
-    image: "/images/baatukaay.png",
-    liveUrl: "https://www.baatukaay.com/",
-  },
-  {
-    slug: "yobbal",
-    name: "Yobbal",
-    category: "Parcel Delivery & Tracking Platform",
-    description:
-      "Full-stack logistics platform enabling users to send, receive and track parcels efficiently.",
-    longDescription:
-      "Yobbal is a modern digital logistics solution for local delivery operations. The platform handles parcel creation and shipment management, real-time tracking, a customer interface with admin dashboard, and complete order status management (Pending, In Transit, Delivered) powered by a RESTful API integration.",
-    technologies: [
-      "React.js",
-      "Next.js",
-      "React Native",
-      "Node.js",
-      "Express.js",
-      "PHP",
-      "JavaScript",
-      "MySQL",
-      "Git",
-      "Vercel",
-    ],
-    accent: "#B8791B",
-    year: "2025",
-    image: "/images/yobbal-1.png",
-    liveUrl: "https://www.yobbal.sn/",
+      "Bokk Dem is a mobility and delivery platform built as an MVP with three products: a Customer app, a Driver app and a backend API. It covers mapping and real-time geolocation with Google Maps, push notifications with Firebase Cloud Messaging, SMS OTP verification and a payment journey. The apps are built with React Native / Expo, the API with NestJS on PostgreSQL / Supabase, deployed on a Linux VPS behind Nginx and PM2, with mobile releases automated through GitHub Actions and EAS. The Driver app is live on Google Play.",
+    technologies: ["React Native", "Expo", "NestJS", "PostgreSQL", "Supabase", "Firebase / FCM", "Google Maps", "GitHub Actions", "EAS"],
+    accent: "#1F8A5B",
+    year: "2026",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.bokkdem.driver",
+    liveLabel: "View on Google Play",
   },
   {
     slug: "exijob",
     name: "ExiJob",
-    category: "Job Board Platform",
+    category: "Pan-African Job Board",
     description:
-      "An online recruitment platform (job board) that connects job seekers with recruiters.",
+      "Recruitment platform with job search and offer management, designed for the African job market.",
     longDescription:
-      "ExiJob is a web-based recruitment platform developed using Angular 21 with TypeScript, Tailwind CSS 4, and Angular Material. Structured as a frontend monorepo with a small integrated Express backend for file uploads, it enables job postings, applications, messaging, coaching, testing, and payroll management. Goal: to efficiently connect candidates and recruiters.",
-    technologies: [
-      "Angular",
-      "TypeScript",
-      "Tailwind",
-      "Angular Material",
-      "RxJS",
-      "Express",
-      "Multer",
-      "Vitest",
-      "Docker",
-      "Figma",
-    ],
+      "ExiJob is a pan-African recruitment platform connecting candidates and recruiters. I designed and developed it from requirements analysis to production: job search and offer management, candidate and recruiter spaces, applications and hiring workflows, plus generative-AI / LLM features that improve the user experience and automate business tasks. An observability stack (Prometheus, Grafana, ELK, Sentry) with SLO alerting brought mean time to recovery from ~3.5 hours to under 25 minutes.",
+    technologies: ["Angular", "TypeScript", "Python", "PostgreSQL", "OpenAI", "AWS", "Prometheus", "Grafana", "Sentry"],
     accent: "#2D4AC9",
     year: "2026",
-    image: "/images/exijob.png",
-    liveUrl: "http://15.188.50.138/",
+    image: "/images/exijob.webp",
+    liveUrl: "https://exijob.com",
+  },
+  {
+    slug: "yobbal",
+    name: "Yobbal",
+    category: "Parcel Tracking Platform",
+    description:
+      "Full-stack logistics platform to send, receive and track parcels, with an administration area.",
+    longDescription:
+      "Yobbal is a digital logistics solution for local delivery operations. The platform handles shipment creation and tracking, parcel statuses (Pending, In Transit, Delivered), a customer consultation journey and an administration area, all powered by a REST API. It is built with React / Next.js on the web, React Native on mobile, and Node.js / Express and PHP services on MySQL, deployed on Vercel.",
+    technologies: ["React", "Next.js", "React Native", "Node.js", "Express", "PHP", "MySQL", "Vercel"],
+    accent: "#B8791B",
+    year: "2025",
+    image: "/images/yobbal-1.webp",
+    liveUrl: "https://www.yobbal.sn/",
+  },
+  {
+    slug: "elite-dental",
+    name: "Elite Dental",
+    category: "Website & Optimization",
+    description:
+      "Professional website for a dental laboratory, with a custom theme and a structured product and service catalog.",
+    longDescription:
+      "A fully customized WordPress theme with a structured product and service catalog for a dental laboratory. The project covers responsive UX/UI, SEO, security hardening and performance work focused on Core Web Vitals — giving the company a fast, professional platform to showcase its products and services.",
+    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "Figma"],
+    accent: "#B11226",
+    year: "2023",
+    image: "/images/elite-dental.webp",
+    liveUrl: "https://elitedental.fr/",
   },
 ];
 
