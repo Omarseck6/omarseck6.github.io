@@ -8,7 +8,7 @@ import { portfolio } from "@/data/portfolio";
 import { contactSchema, type ContactInput } from "@/lib/contact-schema";
 
 // Static hosting (GitHub Pages) has no server: submissions go to a third-party form endpoint.
-const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
+const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || portfolio.contactFormEndpoint;
 
 export function ContactForm() {
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactInput>({ resolver: zodResolver(contactSchema) });

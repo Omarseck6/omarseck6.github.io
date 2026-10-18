@@ -10,7 +10,7 @@ export function Contact() {
     <section id="contact" className="contact section-light">
       <div className="container-shell">
         <Reveal>
-          <div className="contact-heading"><p className="eyebrow">07 · Start a conversation</p><h2>Let&apos;s build something <span>worth remembering.</span></h2><p>Have a complex product, a bold idea or a team ready for its next chapter? Let&apos;s make the direction clear.</p></div>
+          <div className="contact-heading"><p className="eyebrow">06 · Start a conversation</p><h2>Let&apos;s build something <span>worth remembering.</span></h2><p>Have a complex product, a bold idea or a team ready for its next chapter? Let&apos;s make the direction clear.</p></div>
         </Reveal>
         <div className="contact-grid">
           <Reveal><ContactForm /></Reveal>

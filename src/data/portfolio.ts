@@ -5,7 +5,6 @@ import type {
   Service,
   SkillGroup,
   SocialLink,
-  Testimonial,
 } from "@/types/portfolio";
 
 export const portfolio = {
@@ -17,6 +16,8 @@ export const portfolio = {
   location: "Dakar, Senegal",
   email: "omarseck.dev@gmail.com",
   phone: "+221 76 814 80 84",
+  // Public Formspree endpoint (not a secret); NEXT_PUBLIC_CONTACT_FORM_ENDPOINT overrides it.
+  contactFormEndpoint: "https://formspree.io/f/xdeajwjw",
   cv: [
     { code: "FR", label: "Français", language: "fr", href: "/cv/omar-seck-cv-fr.pdf" },
     { code: "EN", label: "English", language: "en", href: "/cv/omar-seck-cv-en.pdf" },
@@ -43,7 +44,6 @@ export const navigation = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -208,29 +208,5 @@ export const projects: Project[] = [
     year: "2023",
     image: "/images/elite-dental.webp",
     liveUrl: "https://elitedental.fr/",
-  },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Omar has the rare ability to simplify a complex product without simplifying the ambition behind it.",
-    name: "Aïssatou Ndiaye",
-    role: "Product Director · Naya",
-    initials: "AN",
-  },
-  {
-    quote:
-      "Every decision had intent — architecture, interaction and performance all moved in the same direction.",
-    name: "Marc Dubois",
-    role: "Founder · Orbis",
-    initials: "MD",
-  },
-  {
-    quote:
-      "He elevated both the product and the team. The resulting system is faster, clearer and genuinely built to last.",
-    name: "Fatou Ba",
-    role: "VP Engineering · Atlas",
-    initials: "FB",
   },
 ];

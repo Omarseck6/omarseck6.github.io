@@ -26,7 +26,7 @@ export function Navbar() {
         </Link>
 
         <div className="nav-links" aria-label="Page sections">
-          {navigation.slice(0, 6).map((item) => (
+          {navigation.slice(0, 5).map((item) => (
             <Link key={item.href} href={item.href}>{item.label}</Link>
           ))}
         </div>
